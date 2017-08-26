@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace FizzBuzzLibrary
 {
-public class FizzBuzz
+public class FizzBuzzLibrary
 {
-    public FizzBuzz(){}
-    public FizzBuzz(int i)
+    public FizzBuzzLibrary(){}
+    public FizzBuzzLibrary(int i)
     {
         this.upperBound = i;
     }
 
-    public int upperBound = 0;
+    protected int upperBound = 0;
 
-    public void FizzBuzzer()
+    public void FizzBuzz()
     {
-        FizzBuzzer(upperBound);
+        FizzBuzz(upperBound);
     }
         
-    public void FizzBuzzer(int upperBound)
+    public void FizzBuzz(int upperBound)
     {   
             for (int i = 1; i <= upperBound ; i++)
             {
