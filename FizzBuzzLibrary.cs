@@ -6,41 +6,53 @@ using System.Threading.Tasks;
 
 namespace FizzBuzzLibrary
 {
-public class FizzBuzzLibrary
-{
-    public FizzBuzzLibrary(){}
-    public FizzBuzzLibrary(int i)
+    public class FizzBuzzClass
     {
-        this.upperBound = i;
-    }
+        public FizzBuzzClass(){}
+        public FizzBuzzClass(int i)
+        {
+            this.upperBound = i;
+        }
 
-    protected int upperBound = 0;
+        protected int upperBound = 0;
 
-    public void FizzBuzz()
-    {
-        FizzBuzz(upperBound);
-    }
+        /* Call FizzBuzz with default upperBound */
+        public List<string> FizzBuzz()
+        {
+            return FizzBuzz(upperBound);
+        }
         
-    public void FizzBuzz(int upperBound)
-    {   
-            for (int i = 1; i <= upperBound ; i++)
+        /* FizzBuzz using provided upperBound */
+        public List<string> FizzBuzz(int upperBound)
+        {
+            var fbString = new List<string>();
+
+            for (int fbCounter = 1; fbCounter <= upperBound ; fbCounter++)
             {
-                if ((i % 3 == 0 ) || (i % 5 == 0))
+                if ((fbCounter % 3 == 0 ) || (fbCounter % 5 == 0))
                 {
-                    if (i % 3 == 0 )
+                    if ((fbCounter % (3*5)) == 0)
                     {
-                        Console.WriteLine("Fizz");
+                        fbString.Add("Fizz-Buzz!");
                     }
-                    if (i % 5 == 0)
+                    else if ((fbCounter % 3) == 0 )
                     {
-                        Console.WriteLine("Buzz");
+                        //Console.WriteLine("Fizz");
+                        fbString.Add("Fizz");
+                    }
+                    else if ((fbCounter % 5) == 0)
+                    {
+                        //Console.WriteLine("Buzz");
+                        fbString.Add("Buzz");
                     }
                 }
                 else
                 {
-                    Console.WriteLine(i);
+                    //Console.WriteLine(i);
+                    fbString.Add(fbCounter.ToString());
                 }
             }
+            return fbString;
         }
     }
 }
