@@ -9,15 +9,29 @@ namespace ConsoleApplication1
 {
     class ConsoleProgram
     {
+        const string consoleNullStringWarning = "FB string not produced.";
         static void Main(string[] args)
         {
-            var myFizzBuzz = new FizzBuzzClass(100);
+            var myFizzBuzz = new FizzBuzzClass(15, 3, 5, "Mod3", string2: "Mod5");
             var fbList = new List<string>();
+            
+            /* Call the FB producer */
             fbList = myFizzBuzz.FizzBuzz();
 
-            foreach (string fizzBuzz in fbList)
+            /* Consume by writing to console */
+            if (fbList != null)
             {
-                Console.WriteLine(fizzBuzz);
+                foreach (string fizzBuzz in fbList)
+                {
+                    if (fizzBuzz != null)
+                    {
+                        Console.WriteLine(fizzBuzz);
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine(consoleNullStringWarning);
             }
         }
     }
