@@ -1,0 +1,8 @@
+C:\Users\Andre\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\FizzBuzzConsole.csprojResolveAssemblyReference.cache
+C:\Users\Andre\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Andre\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Andre\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Andre\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Andre\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\FizzBuzz.dll
+C:\Users\Andre\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\bin\Debug\FizzBuzz.pdb
+C:\Users\Andre\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
