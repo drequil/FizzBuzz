@@ -8,6 +8,12 @@ namespace FizzBuzzLibrary
 {
     public class FizzBuzzClass
     {
+        public static int default_upperBound = 100;
+        public static int default_value1 = 3;
+        public static int default_value2 = 5;
+        public static string default_string1 = "Fizz";
+        public static string default_string2 = "Buzz";
+
         public FizzBuzzClass(){}
         public FizzBuzzClass(int upperBound, int value1, int value2)
         {
@@ -24,20 +30,23 @@ namespace FizzBuzzLibrary
             this.string2 = string2;
         }
 
-        protected int upperBound = 100;
-        protected int value1 = 3;
-        protected int value2 = 5;
-        protected string string1 = "Fizz";
-        protected string string2 = "Buzz";
+        protected int upperBound = FizzBuzzClass.default_upperBound;
+        protected int value1 = FizzBuzzClass.default_value1;
+        protected int value2 = FizzBuzzClass.default_value2;
+        protected string string1 = FizzBuzzClass.default_string1;
+        protected string string2 = FizzBuzzClass.default_string2;
 
         /* Call FizzBuzz with defaults */
         public List<string> FizzBuzz()
         {
-            return FizzBuzz(upperBound, value1, value2);
+            return FizzBuzz(upperBound, value1, value2, string1, string2);
         }
-        
-        /* FizzBuzz using provided upperBound */
         public List<string> FizzBuzz(int upperBound, int value1, int value2)
+        {
+            return FizzBuzz(upperBound, value1, value2, string1, string2);
+        }        
+        /* FizzBuzz using provided upperBound */
+        public List<string> FizzBuzz(int upperBound, int value1, int value2, string string1, string string2)
         {
             var fbString = new List<string>();
 
@@ -51,25 +60,28 @@ namespace FizzBuzzLibrary
             this.upperBound = upperBound; 
             this.value1 = value1;
             this.value2 = value2;
+            this.string1 = string1;
+            this.string2 = string2;
 
             for (int fbCounter = 1; fbCounter <= upperBound ; fbCounter++)
             {
                 if ((fbCounter % value1 == 0 ) || (fbCounter % value2 == 0))
                 {
-                    if ((fbCounter % (value1*value2)) == 0)
+                    bool value1Found = false;
+                    string resultString = "";
+
+                    if ((fbCounter % value1) == 0 )
                     {
-                        fbString.Add(string1 + "-" + string2);
+                        resultString = string1;
+                        value1Found = true;
                     }
-                    else if ((fbCounter % value1) == 0 )
+                    if ((fbCounter % value2) == 0)
                     {
-                        //Console.WriteLine("Fizz");
-                        fbString.Add(string1);
+                        /* Concat in order to handle multiples and powers */
+                        if (value1Found) resultString = string.Concat(resultString, "-"); 
+                        resultString = string.Concat(resultString, string2);
                     }
-                    else if ((fbCounter % value2) == 0)
-                    {
-                        //Console.WriteLine("Buzz");
-                        fbString.Add(string2);
-                    }
+                    fbString.Add(resultString);
                 }
                 else
                 {

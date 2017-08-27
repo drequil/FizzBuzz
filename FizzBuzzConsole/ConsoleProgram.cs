@@ -12,7 +12,7 @@ namespace ConsoleApplication1
         const string consoleNullStringWarning = "FB string not produced.";
         static void Main(string[] args)
         {
-            var myFizzBuzz = new FizzBuzzClass(15, 3, 5, "Mod3", string2: "Mod5");
+            var myFizzBuzz = new FizzBuzzClass();
             var fbList = new List<string>();
             
             /* Call the FB producer */
